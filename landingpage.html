@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yago Rodrigues · Currículo 2026</title>
+  <!-- Fontes e ícones -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f5f7fc;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #1e1e2a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 2rem 1.5rem;
+      line-height: 1.5;
+    }
+
+    .card {
+      max-width: 1200px;
+      width: 100%;
+      background: #ffffff;
+      border-radius: 40px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08), 0 8px 20px -8px rgba(0, 20, 40, 0.04);
+      padding: 2.5rem 2.8rem;
+      transition: all 0.2s ease;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(2px);
+    }
+
+    /* grid principal */
+    .grid-layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 2.5rem;
+    }
+
+    /* ===== SIDEBAR ===== */
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .foto-wrapper {
+      background: linear-gradient(145deg, #f0f4fe, #e9eefa);
+      border-radius: 28px;
+      padding: 1.2rem;
+      box-shadow: inset 0 2px 6px rgba(0,0,0,0.02), 0 12px 24px -10px rgba(0, 40, 80, 0.08);
+    }
+
+    .foto-placeholder {
+      aspect-ratio: 1 / 1;
+      width: 100%;
+      border-radius: 24px;
+      background: #d9e2f0;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100"><circle cx="50" cy="40" r="22" fill="%23a0b8d4"/><circle cx="50" cy="85" r="32" fill="%23a0b8d4"/><circle cx="50" cy="40" r="22" fill="%23b8cce6"/><circle cx="50" cy="85" r="32" fill="%23b8cce6"/><circle cx="50" cy="40" r="20" fill="%23c8daf0"/><circle cx="50" cy="85" r="30" fill="%23c8daf0"/></svg>');
+      background-size: 60% 60%;
+      background-position: center 55%;
+      background-repeat: no-repeat;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      color: #1f2a44;
+      font-weight: 500;
+      font-size: 0.9rem;
+      letter-spacing: 0.3px;
+      box-shadow: 0 8px 18px -6px rgba(0,20,40,0.12);
+      transition: transform 0.2s;
+    }
+
+    .foto-placeholder span {
+      background: rgba(255,255,255,0.6);
+      backdrop-filter: blur(4px);
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+      margin-bottom: 1.2rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #1f2a44;
+      border: 1px solid rgba(255,255,255,0.8);
+    }
+
+    .info-contato {
+      background: #f8faff;
+      border-radius: 28px;
+      padding: 1.5rem 1.2rem;
+      border: 1px solid rgba(0,0,0,0.02);
+    }
+
+    .info-contato h3 {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: #5d6f8f;
+      margin-bottom: 1.2rem;
+      font-weight: 600;
+    }
+
+    .contato-item {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 0.5rem 0;
+      font-size: 0.9rem;
+      color: #1e2a44;
+      border-bottom: 1px solid rgba(0,0,0,0.02);
+    }
+
+    .contato-item i {
+      width: 20px;
+      color: #2f4b7a;
+      font-size: 0.95rem;
+    }
+
+    .contato-item:last-child {
+      border-bottom: none;
+    }
+
+    .habilidades, .certificados {
+      background: #f8faff;
+      border-radius: 28px;
+      padding: 1.5rem 1.2rem;
+      border: 1px solid rgba(0,0,0,0.02);
+    }
+
+    .habilidades h3, .certificados h3 {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: #5d6f8f;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .skill-tag {
+      display: inline-block;
+      background: white;
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #1e2a44;
+      margin: 0.2rem 0.2rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+      border: 1px solid #eef3fd;
+    }
+
+    .cert-item {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-size: 0.85rem;
+      padding: 0.4rem 0;
+      color: #1e2a44;
+    }
+
+    .cert-item i {
+      color: #2f4b7a;
+      width: 18px;
+      font-size: 0.8rem;
+    }
+
+    /* ===== CONTEÚDO PRINCIPAL ===== */
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      gap: 2.2rem;
+    }
+
+    .header-titulo h1 {
+      font-size: 2.8rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #0b172e;
+      line-height: 1.1;
+      margin-bottom: 0.3rem;
+    }
+
+    .header-titulo .sub {
+      font-size: 1rem;
+      color: #3f5680;
+      font-weight: 400;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    .header-titulo .sub i {
+      color: #6c86b0;
+      font-size: 0.8rem;
+    }
+
+    .bio {
+      background: #f8faff;
+      padding: 1.5rem 1.8rem;
+      border-radius: 30px;
+      border: 1px solid rgba(0,0,0,0.02);
+    }
+
+    .bio p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #1e2a44;
+      font-weight: 400;
+    }
+
+    .bio strong {
+      color: #0b172e;
+      font-weight: 600;
+    }
+
+    .experiencia, .educacao {
+      background: #f8faff;
+      padding: 1.5rem 1.8rem;
+      border-radius: 30px;
+      border: 1px solid rgba(0,0,0,0.02);
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #5d6f8f;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+    }
+
+    .section-title i {
+      font-size: 0.9rem;
+      color: #2f4b7a;
+    }
+
+    .exp-item, .edu-item {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .exp-item:last-child, .edu-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .exp-left, .edu-left {
+      min-width: 100px;
+      font-weight: 500;
+      color: #1f2a44;
+      font-size: 0.85rem;
+    }
+
+    .exp-left .ano, .edu-left .ano {
+      font-weight: 400;
+      color: #5d6f8f;
+      font-size: 0.75rem;
+      display: block;
+      margin-top: 0.1rem;
+    }
+
+    .exp-right, .edu-right {
+      flex: 1;
+    }
+
+    .exp-right h4, .edu-right h4 {
+      font-weight: 600;
+      font-size: 1rem;
+      color: #0b172e;
+      margin-bottom: 0.2rem;
+    }
+
+    .exp-right .empresa, .edu-right .instituicao {
+      font-weight: 500;
+      color: #2f4b7a;
+      font-size: 0.85rem;
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .exp-right p, .edu-right p {
+      font-size: 0.9rem;
+      color: #2b3b5a;
+      line-height: 1.5;
+    }
+
+    .badge-moderno {
+      background: white;
+      border-radius: 60px;
+      padding: 0.15rem 0.9rem;
+      font-size: 0.65rem;
+      font-weight: 600;
+      color: #1f3a66;
+      display: inline-block;
+      border: 1px solid #dce6f5;
+      letter-spacing: 0.2px;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e8effa;
+      margin: 0.4rem 0 0.8rem 0;
+    }
+
+    /* Responsivo */
+    @media (max-width: 860px) {
+      .card {
+        padding: 1.8rem;
+      }
+      .grid-layout {
+        grid-template-columns: 1fr;
+        gap: 1.8rem;
+      }
+      .sidebar {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+      }
+      .foto-wrapper {
+        grid-column: 1 / -1;
+        max-width: 200px;
+        justify-self: center;
+        width: 100%;
+      }
+      .info-contato {
+        grid-column: 1 / -1;
+      }
+      .header-titulo h1 {
+        font-size: 2.2rem;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .card {
+        padding: 1.2rem;
+      }
+      .sidebar {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+      .foto-wrapper {
+        max-width: 160px;
+      }
+      .exp-item, .edu-item {
+        flex-direction: column;
+        gap: 0.2rem;
+      }
+      .exp-left, .edu-left {
+        min-width: auto;
+      }
+      .header-titulo h1 {
+        font-size: 1.8rem;
+      }
+      .bio, .experiencia, .educacao {
+        padding: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="card">
+  <div class="grid-layout">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="foto-wrapper">
+        <div class="foto-placeholder">
+          <span>Yago Rodrigues</span>
+        </div>
+      </div>
+
+      <div class="info-contato">
+        <h3><i class="fas fa-address-card" style="margin-right: 6px;"></i> Contato</h3>
+        <div class="contato-item"><i class="fas fa-envelope"></i> yago@email.com</div>
+        <div class="contato-item"><i class="fas fa-phone-alt"></i> +55 (85) 9 9999-9999</div>
+        <div class="contato-item"><i class="fas fa-map-pin"></i> Fortaleza, CE</div>
+        <div class="contato-item"><i class="fab fa-linkedin-in"></i> linkedin.com/in/yago</div>
+        <div class="contato-item"><i class="fab fa-github"></i> github.com/yagowb</div>
+      </div>
+
+      <div class="habilidades">
+        <h3><i class="fas fa-code" style="margin-right: 6px;"></i> Habilidades</h3>
+        <div>
+          <span class="skill-tag">JavaScript (ES6+)</span>
+          <span class="skill-tag">React & Next.js</span>
+          <span class="skill-tag">Node.js</span>
+          <span class="skill-tag">TypeScript</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">SQL / MongoDB</span>
+          <span class="skill-tag">Docker</span>
+          <span class="skill-tag">Figma</span>
+          <span class="skill-tag">CI/CD</span>
+        </div>
+      </div>
+
+      <div class="certificados">
+        <h3><i class="fas fa-certificate" style="margin-right: 6px;"></i> Certificados</h3>
+        <div class="cert-item"><i class="fas fa-check-circle"></i> AWS Certified Developer – 2025</div>
+        <div class="cert-item"><i class="fas fa-check-circle"></i> Scrum Master (PSM I)</div>
+        <div class="cert-item"><i class="fas fa-check-circle"></i> Google UX Design</div>
+        <div class="cert-item"><i class="fas fa-check-circle"></i> Meta Backend Developer</div>
+        <div class="cert-item"><i class="fas fa-check-circle"></i> TOEFL iBT (110/120)</div>
+      </div>
+    </aside>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="main-content">
+      <div class="header-titulo">
+        <h1>Yago Rodrigues</h1>
+        <div class="sub">
+          <span>Engenheiro de Software Sênior</span>
+          <span><i class="fas fa-circle" style="font-size: 0.3rem; vertical-align: middle;"></i> 8+ anos de experiência</span>
+          <span class="badge-moderno"><i class="fas fa-bolt" style="margin-right: 4px;"></i> 2026 · disponível</span>
+        </div>
+      </div>
+
+      <div class="bio">
+        <p>
+          <strong>Perfil profissional</strong> — Engenheiro de software com foco em arquitetura de sistemas escaláveis e 
+          liderança técnica. Experiência em fintechs e healthtechs, combinando metodologias ágeis com design centrado no usuário. 
+          Apaixonado por inovação, open-source e mentoring.
+        </p>
+      </div>
+
+      <!-- Experiência -->
+      <div class="experiencia">
+        <div class="section-title">
+          <i class="fas fa-briefcase"></i> Experiência profissional
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-left">
+            Tech Lead <span class="ano">2023 – atual</span>
+          </div>
+          <div class="exp-right">
+            <h4>Nubank · Remoto</h4>
+            <span class="empresa">Liderança técnica · squad de pagamentos</span>
+            <p>Arquitetura de microsserviços em Kotlin e AWS, redução de latência em 32% e mentoria de 6 engenheiros.</p>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-left">
+            Sênior <span class="ano">2021 – 2023</span>
+          </div>
+          <div class="exp-right">
+            <h4>Gympass · São Paulo</h4>
+            <span class="empresa">Backend & plataforma</span>
+            <p>Desenvolvimento de APIs REST e GraphQL, integração com parceiros, migração para Node.js + TypeScript.</p>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-left">
+            Full Stack <span class="ano">2018 – 2021</span>
+          </div>
+          <div class="exp-right">
+            <h4>Creditas · São Paulo</h4>
+            <span class="empresa">Time de produtos digitais</span>
+            <p>Construção de dashboards e fluxos de crédito com React, Redux e Rails. Participação em squads de growth.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Educação -->
+      <div class="educacao">
+        <div class="section-title">
+          <i class="fas fa-graduation-cap"></i> Educação
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-left">
+            M.Sc. <span class="ano">2016 – 2018</span>
+          </div>
+          <div class="edu-right">
+            <h4>Universidade de São Paulo (USP)</h4>
+            <span class="instituicao">Ciência da Computação · Ênfase em Sistemas Distribuídos</span>
+            <p>Pesquisa em consistência de dados e edge computing. Publicação no IEEE ICBC 2018.</p>
+          </div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-left">
+            B.Eng. <span class="ano">2012 – 2016</span>
+          </div>
+          <div class="edu-right">
+            <h4>Instituto Tecnológico de Aeronáutica (ITA)</h4>
+            <span class="instituicao">Engenharia da Computação</span>
+            <p>Bolsista de iniciação científica em redes neurais. Projeto final com foco em visão computacional.</p>
+          </div>
+        </div>
+        <hr>
+        <div style="display: flex; gap: 0.6rem; flex-wrap: wrap; padding-top: 0.2rem;">
+          <span class="badge-moderno"><i class="fas fa-language"></i> Português (nativo)</span>
+          <span class="badge-moderno"><i class="fas fa-language"></i> Inglês (fluente – C2)</span>
+          <span class="badge-moderno"><i class="fas fa-language"></i> Espanhol (intermediário)</span>
+        </div>
+      </div>
+
+      <!-- minifooter -->
+      <div style="margin-top: 0.2rem; font-size: 0.7rem; color: #7b8aa8; letter-spacing: 0.2px; border-top: 1px solid #eef3fd; padding-top: 1rem; display: flex; justify-content: space-between; flex-wrap: wrap;">
+        <span><i class="far fa-calendar-alt"></i> Atualizado 2026 · referências disponíveis</span>
+        <span><i class="far fa-heart" style="color: #b0c4e0;"></i> design 2026</span>
+      </div>
+    </main>
+  </div>
+</div>
+</body>
+</html>
